@@ -1,8 +1,6 @@
 import React from 'react';
 
-import Cards from './Components/Cards/Cards';
-import Charts from './Components/Charts/Charts';
-import CountryPicker from './Components/CountryPicker/CountryPicker';
+import {Cards, Charts, CountryPicker} from "./Components"
 
 class App extends React.Component {
     render(){
