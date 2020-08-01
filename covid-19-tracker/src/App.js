@@ -7,8 +7,8 @@ import styles from './App.module.css';
 
 class App extends React.Component {
 
-    state= {
-        data = {},
+    state = {
+        data: {},
     }
 
     async componentDidMount(){
