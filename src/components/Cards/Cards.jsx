@@ -3,6 +3,7 @@ import React from "react";
 import { Card, CardContent, Typography, Grid } from "@material-ui/core";
 import styles from "./Cards.module.css";
 import CountUp from "react-countup";
+import cn from 'classnames';
 
 const Cards = ({ data: { confirmed, recovered, deaths, lastUpdate } }) => {
   if (!confirmed) {
@@ -10,8 +11,8 @@ const Cards = ({ data: { confirmed, recovered, deaths, lastUpdate } }) => {
   }
   return (
     <div className={styles.container}>
-      <Grid contaner spacing={3} justify="center">
-        <Grid item component={Card}>
+      <Grid container spacing={3} justify="center">
+        <Grid item component={Card} xs = {12} md = {3} className = {cn(styles.card, styles.infected)}>
           <CardContent>
             <Typography color="textDecodary">Infected</Typography>
             <Typography varaint="h5">
@@ -23,7 +24,7 @@ const Cards = ({ data: { confirmed, recovered, deaths, lastUpdate } }) => {
             </Typography>
           </CardContent>
         </Grid>
-        <Grid item component={Card}>
+        <Grid item component={Card} xs = {12} md = {3} className = {cn(styles.card, styles.recovered)}>
           <CardContent>
             <Typography color="textDecodary">Recovered</Typography>
             <Typography varaint="h5">
@@ -35,7 +36,7 @@ const Cards = ({ data: { confirmed, recovered, deaths, lastUpdate } }) => {
             </Typography>
           </CardContent>
         </Grid>
-        <Grid item component={Card}>
+        <Grid item component={Card} xs = {12} md = {3} className = {cn(styles.card, styles.deaths)}>
           <CardContent>
             <Typography color="textDecodary">Deaths</Typography>
             <Typography varaint="h5">
