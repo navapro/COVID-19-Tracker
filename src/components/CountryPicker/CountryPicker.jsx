@@ -4,6 +4,16 @@ import styles from './CountryPicker.module.css';
 import {countries} from '../../api';
 
 const CountryPicker = () => { 
+
+    const [fetchedCountries, setFetchedCountries] = useState([]);
+
+    useEffect(() =>{
+        const fetchCountries = async() => {
+            setFetchedCountries(await countries);
+        }
+
+        fetchCountries();
+    }, [setFetchedCountries]);
     return(
         <FormControl className = {styles.FormControl}>
             <NativeSelect>
